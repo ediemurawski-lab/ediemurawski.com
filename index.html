@@ -69,8 +69,7 @@
   .hero h1 { font-size: clamp(3rem, 7.4vw, 6.6rem); line-height: .98; letter-spacing: -0.025em; font-weight: 200; }
   .hero h1 em { font-weight: 300; }
   .hero .lead { font-size: clamp(1.1rem, 1.6vw, 1.3rem); max-width: 560px; margin: 1.75rem 0 2rem; }
-  .hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.25rem; }
-  .availability { margin: 0 0 clamp(48px, 6vw, 80px); font-size: .92rem; letter-spacing: .03em; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: clamp(48px, 6vw, 80px); }
   .hero-photo { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; object-position: 50% 30%; border-radius: 2px; }
   .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(74, 47, 60, .25); margin-top: clamp(40px, 5vw, 64px); }
   .stat { padding: 1.5rem 1.25rem 2rem 0; }
@@ -119,7 +118,7 @@
   .ya-gallery { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(10px, 1.4vw, 18px); }
   .ya-gallery .art { grid-column: span 2; aspect-ratio: 4 / 3; }
   .ya-gallery .art.wide { grid-column: span 3; aspect-ratio: 5 / 4; }
-  .ya-body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 64px); margin-top: clamp(32px, 4vw, 56px); }
+  .ya-body { margin-top: clamp(32px, 4vw, 56px); max-width: 68ch; }
   blockquote { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(1.4rem, 2.3vw, 1.9rem); line-height: 1.35; }
   blockquote cite { display: block; margin-top: 1rem; font-family: var(--sans); font-style: normal; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--label); }
 
@@ -248,11 +247,22 @@
   dialog p { color: #f3ecea; text-align: center; margin: .8rem 0 0; font-size: .95rem; }
   dialog .close { position: fixed; top: 12px; right: 16px; font: 2.2rem/1 var(--sans); color: #fff; background: none; border: 0; cursor: pointer; padding: 8px; }
 
+
+  .section-title + .work-grid, .section-title + .skills-grid { margin-top: clamp(36px, 4.5vw, 64px); }
+  /* Smaller headings use the plain sans */
+  .card h3, .proj h3, .timeline h3, .gallery-block h3, .origin h3, .features h4, .soft dt, .skill-col > h3, .sub-title { font-family: var(--sans); font-weight: 600; letter-spacing: -0.005em; }
+  .card h3 { font-size: clamp(1.15rem, 1.6vw, 1.35rem); line-height: 1.3; }
+  .proj h3 { font-size: clamp(1.25rem, 1.9vw, 1.6rem); line-height: 1.25; }
+  .timeline h3 { font-size: 1.1rem; }
+  .gallery-block h3 { font-size: clamp(1.15rem, 1.6vw, 1.35rem); }
+  .features h4 { font-size: 1rem; }
+  .soft dt { font-size: 1.05rem; }
+  .skill-col > h3, .sub-title { font-size: 1.2rem; }
+
   @media (max-width: 900px) {
     .hero-grid, .ya-head, .ya-body, .about-grid { grid-template-columns: 1fr; }
     .hero-photo { max-width: 420px; aspect-ratio: 1 / 1; }
-    .hero .actions { margin-bottom: 1rem; }
-    .availability { margin-bottom: 0; }
+    .hero .actions { margin-bottom: 0; }
     .stats { grid-template-columns: 1fr 1fr; }
     .stat:nth-child(3) { padding-left: 0; border-left: 0; }
     .stat:nth-child(n+3) { border-top: 1px solid rgba(74, 47, 60, .25); }
@@ -313,20 +323,19 @@
         <div>
           <p class="eyebrow">USC Marshall &amp; Iovine and Young Academy · Class of 2030</p>
           <h1>Artist by training, <em>innovator</em> by design.</h1>
-          <p class="lead">Most business students arrive with a finance class or two under their belts. I came through a paintbrush. I’m a conservatory-trained painter studying the Business of Innovation at USC, and I want to work in marketing and brand: the one corner of business where knowing why a painting works counts as a professional skill.</p>
+          <p class="lead">I’m a classically trained visual artist bringing my creative foundation into the business world. I’m currently studying the Business of Innovation through a joint degree at USC’s Marshall School of Business and the Iovine and Young Academy.</p>
           <div class="actions">
             <a class="btn solid" href="#experience">See my work</a>
             <a class="btn" href="Edie-Murawski-Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
           </div>
-          <p class="availability">Seeking a summer 2027 marketing or brand internship · Los Angeles, CA</p>
         </div>
         <img class="hero-photo" src="images/edie-portrait.jpg" alt="Portrait of Edie Murawski" width="594" height="697">
       </div>
       <div class="stats">
-        <div class="stat"><b>Top 1.3%</b><span>2026 YoungArts Winner with Distinction, Visual Arts: 171 of nearly 13,000 applicants</span></div>
-        <div class="stat"><b>Salutatorian</b><span>4.56 GPA at Booker T. Washington High School for the Performing and Visual Arts</span></div>
-        <div class="stat"><b>&lt;10%</b><span>Acceptance rate into The Consulting Club, from 200+ applicants</span></div>
-        <div class="stat"><b>107</b><span>Respondents in the consumer survey I designed and analyzed for an Amazon Prime engagement</span></div>
+        <div class="stat"><b>Top 1.3%</b><span>2026 YoungArts Winner with Distinction in Visual Arts (171 of nearly 13,000 applicants)</span></div>
+        <div class="stat"><b>Salutatorian</b><span>4.56 GPA, Booker T. Washington High School for the Performing and Visual Arts</span></div>
+        <div class="stat"><b>&lt;10%</b><span>Acceptance rate to The Consulting Club (200+ applicants)</span></div>
+        <div class="stat"><b>107</b><span>Respondents to the Amazon Prime consumer survey I designed and analyzed</span></div>
       </div>
     </div>
   </section>
@@ -336,46 +345,45 @@
     <div class="wrap">
       <p class="eyebrow">Experience</p>
       <h2 class="section-title">Research, strategy <em>&amp;</em> design</h2>
-      <p class="section-intro">My favorite part of a project is when the survey results come back; my second favorite is designing what we do about them. Most of my work so far lives between those two moments.</p>
 
       <div class="work-grid">
         <article class="card">
           <div class="meta"><span>The Consulting Club · Client Services Analyst</span><span>Aug 2026 – present</span></div>
-          <h3>Testing a bridge membership between Amazon Prime’s teen and individual accounts</h3>
+          <h3>Testing a transitional Amazon Prime membership tier</h3>
           <ul>
-            <li>Designed a 107-person consumer survey to test demand for a transitional Prime tier, then analyzed the results.</li>
-            <li>Proposed and prototyped a redesigned Amazon Family interface, aimed at making household sign-up simpler and keeping families subscribed.</li>
+            <li>Designed and analyzed a 107-respondent consumer survey on a tier between Prime’s teen and individual accounts.</li>
+            <li>Proposed and prototyped a redesigned Amazon Family interface to simplify household onboarding and improve retention.</li>
           </ul>
           <ul class="tags"><li>Survey design</li><li>Consumer research</li><li>UI/UX prototyping</li></ul>
         </article>
 
         <article class="card">
           <div class="meta"><span>CORE Consulting Group · Case Team Analyst</span><span>Aug 2026 – present</span></div>
-          <h3>Pro bono marketing strategy for Remainders Creative Reuse, an LA nonprofit</h3>
+          <h3>Pro bono marketing strategy for Remainders Creative Reuse</h3>
           <ul>
-            <li>Remainders hosts capoeira classes, and I lead our team’s work on them: I wrote a visitor survey for the classes and built an SEO strategy for their class pages.</li>
-            <li>Benchmarking competitors and surveying customers to shape the rest of their social media and web plan.</li>
+            <li>Lead our team’s work on the capoeira classes the nonprofit hosts, including a visitor survey and an SEO strategy for the class web pages.</li>
+            <li>Surveying customers and benchmarking competitors to inform the organization’s social media and web strategy.</li>
           </ul>
           <ul class="tags"><li>Marketing strategy</li><li>Competitive benchmarking</li><li>Web design</li></ul>
         </article>
 
         <article class="card">
           <div class="meta"><span>USC Iovine and Young Academy (IYA) · Innovators Forum</span><span>Fall 2026</span></div>
-          <h3>Pitching real companies every few weeks: Telemidi and Duolingo</h3>
-          <p>Every few weeks, a company brings an open problem and my team pitches a solution to industry guests (exactly as nerve-racking as it sounds).</p>
+          <h3>Solution pitches to Telemidi and Duolingo</h3>
+          <p>Companies bring open problems to IYA’s Innovators Forum; small teams research each one, build user personas and pitch solutions to industry guests.</p>
           <ul>
-            <li><strong>Telemidi</strong> (low-latency remote music tech): my team designed a virtual concert experience for audiences on the autism spectrum.</li>
-            <li><strong>Duolingo:</strong> I presented a prospective poker course with its own designated avatar.</li>
+            <li><strong>Telemidi</strong> (low-latency remote music technology): my team designed a virtual concert experience for audiences on the autism spectrum.</li>
+            <li><strong>Duolingo:</strong> I pitched a prospective poker course with a dedicated avatar.</li>
           </ul>
           <ul class="tags"><li>User personas</li><li>Concept development</li><li>Pitching</li></ul>
         </article>
 
         <article class="card">
           <div class="meta"><span>Greenlight Studios · Partnerships &amp; Fundraising Coordinator</span><span>Sep 2026 – present</span></div>
-          <h3>Raising the money for a student feature film</h3>
+          <h3>Fundraising for a student feature film</h3>
           <ul>
-            <li>Leading fundraising from pitch to premiere, starting with a targeted donor database of 30+ contacts that I built.</li>
-            <li>Chasing production funding through crowdfunding and grants, and tracking every pledge so none slip through the cracks.</li>
+            <li>Lead fundraising from pitch to premiere, supported by a targeted database of 30+ prospective donors that I built.</li>
+            <li>Pursue production funding through crowdfunding and grants while managing the donor pipeline and tracking commitments.</li>
           </ul>
           <ul class="tags"><li>Partnerships</li><li>Fundraising</li><li>Pipeline management</li></ul>
         </article>
@@ -386,7 +394,7 @@
         <li>
           <div class="when">Dec 2024 – Aug 2025<br>Remote</div>
           <div><h3>Schoolhouse Tutoring</h3><p class="role">SAT Peer Tutor</p>
-          <p>Chosen for top-percentile SAT scores to teach free, multi-week virtual SAT bootcamps.</p></div>
+          <p>Selected for top-percentile SAT scores to lead free, multi-week virtual SAT bootcamps for high school students.</p></div>
         </li>
       </ol>
 
@@ -395,22 +403,22 @@
         <li>
           <div class="when">Aug 2026 – present<br>Los Angeles, CA</div>
           <div><h3>Trojan Investing Society</h3><p class="role">General Member</p>
-          <p>Weekly market discussions, equity research workshops and speaker panels; my crash course in valuation.</p></div>
+          <p>Weekly market discussions, equity research workshops and speaker panels on valuation and capital markets.</p></div>
         </li>
         <li>
           <div class="when">Aug 2025 – May 2026<br>Dallas, TX</div>
           <div><h3>SPCArts Club</h3><p class="role">Founder &amp; President</p>
-          <p>After the East Texas floods, our art students painted adoptable pets for SPCA Dallas to help them get noticed.</p></div>
+          <p>Started a partnership with SPCA Dallas after the East Texas floods; visual arts students painted and donated portraits of adoptable pets to increase their visibility.</p></div>
         </li>
         <li>
           <div class="when">Jan 2023 – May 2026<br>Dallas, TX</div>
           <div><h3>National Art Honor Society</h3><p class="role">President</p>
-          <p>Ran recruitment, community gallery shows and need-based art supply grants; my own work was juried into NAHS exhibitions every year.</p></div>
+          <p>Directed member recruitment, organized community gallery exhibitions and allocated need-based art supply grants. My work was selected for juried NAHS exhibitions each year.</p></div>
         </li>
         <li>
           <div class="when">Jan 2023 – May 2026<br>Dallas, TX</div>
           <div><h3>National Science Honor Society</h3><p class="role">President</p>
-          <p>Replaced the courtyard trees our school lost to disease by petitioning for donated plants and pitching the plan to the principal and district (a surprising amount of municipal juggling for a few plants).</p></div>
+          <p>Led chapter operations, coordinated peer STEM tutoring and organized academic programming.</p></div>
         </li>
       </ol>
     </div>
@@ -423,36 +431,36 @@
     <div class="wrap">
       <p class="eyebrow">Projects</p>
       <h2 class="section-title">From an idea <em>to the pattern</em></h2>
-      <p class="section-intro">I crochet, so I know the feeling: the idea is easy, and the pattern is the hard part. A class project got me building software for that problem; I liked it enough to keep going on my own.</p>
+      <p class="section-intro">I crochet, so I know the feeling: the idea is easy, and the pattern is the hard part. I first explored that problem in a class project, then built a tool of my own.</p>
 
       <article class="proj origin-card">
         <div>
           <div class="meta"><span>Step one · Class collaboration on Replit</span><span>Fall 2026</span></div>
-          <h3>Notch, our class project</h3>
-          <p>My class team built Notch on Replit: a design companion that drafts skirt and top patterns from measurements and prints them at actual size. I helped build it and pitched it, backed by my research showing 3,186 U.S. fashion design degrees awarded in 2024 against about 2,500 openings a year.</p>
+          <h3>Notch</h3>
+          <p>On a class team, I helped build Notch on Replit: a design companion that drafts skirt and top patterns from body measurements and prints them at actual size. I also delivered our pitch and researched the market, which showed 3,186 U.S. fashion design degrees awarded in 2024 against about 2,500 job openings a year.</p>
           <p class="small-links"><a href="https://fashion-design-assistant.replit.app" target="_blank" rel="noopener">See the class project ↗</a></p>
         </div>
-        <button class="art" type="button" data-caption="Notch, the class project: pattern drafts from measurements"><img src="images/notch-pattern.jpg" alt="Notch pattern page showing measurement inputs and a drafted front and back skirt pattern" width="1600" height="981" loading="lazy"></button>
+        <button class="art" type="button" data-caption="Notch: pattern drafts generated from measurements"><img src="images/notch-pattern.jpg" alt="Notch pattern page showing measurement inputs and a drafted front and back skirt pattern" width="1600" height="981" loading="lazy"></button>
       </article>
 
       <article class="proj crochet">
         <div class="crochet-text">
-          <div class="meta"><span>Step two · Solo project, built with Claude Code</span><span>Fall 2026</span></div>
+          <div class="meta"><span>Step two · Independent project, built with Claude Code</span><span>Fall 2026</span></div>
           <h3>My personal pattern generator</h3>
-          <p>Notch was built for fashion students; I wanted a tool that worked the way I crochet, so I built my own with Claude Code. It turns photos, sketches and notes into a pattern, and code checks every stitch before I see a single row (AI is admittedly not great at counting).</p>
+          <p>Notch was designed for fashion students, so I built a separate tool for crochet with Claude Code. It turns photos, sketches and notes into a crochet pattern, and code checks every row’s stitch counts before the pattern is displayed.</p>
           <div class="features">
-            <div><h4>Idea board</h4><p>I pin references, tag what to take from each, and steer the AI’s design brief.</p></div>
-            <div><h4>Piece by piece</h4><p>Multi-piece projects are planned first, so one bad piece doesn’t sink the rest.</p></div>
-            <div><h4>Stitch checker</h4><p>Code verifies every row’s count and shaping; errors get one targeted AI repair.</p></div>
-            <div><h4>Made for the couch</h4><p>I tick off rows and leave notes that feed the next revision.</p></div>
-            <div><h4>Original by design</h4><p>New patterns are checked row by row against a licensed reference library.</p></div>
-            <div class="feat-stack"><h4>Under the hood</h4><p>Node.js, Express, the Claude API with Zod-validated output, and 24 automated tests.</p></div>
+            <div><h4>Idea board</h4><p>Pin references, tag what to use from each, and refine the AI’s design brief.</p></div>
+            <div><h4>Multi-piece planning</h4><p>Large projects are planned and drafted piece by piece, so an error in one piece doesn’t affect the others.</p></div>
+            <div><h4>Stitch checker</h4><p>Code verifies each row’s stitch count and shaping; errors go back to the AI for one targeted repair.</p></div>
+            <div><h4>Progress tracking</h4><p>Check off rows while working and add notes that inform the next revision.</p></div>
+            <div><h4>Originality check</h4><p>New patterns are compared row by row against a library of licensed reference patterns.</p></div>
+            <div class="feat-stack"><h4>Technology</h4><p>Node.js, Express and the Claude API, with Zod-validated output and 24 automated tests.</p></div>
           </div>
           <ul class="tags"><li>Product design</li><li>AI app building</li><li>Claude Code</li><li>Node.js</li><li>Crochet</li></ul>
         </div>
         <div class="notch-shots">
-          <button class="art" type="button" data-caption="The pattern checker: rounds that add up are marked green, and a deliberately wrong round in the demo pattern is flagged"><img src="images/pattern-generator-checker.jpg" alt="Pattern page in my pattern generator: crochet rounds with green ‘adds up’ marks, two red flags reading ‘Stated count is 26, but the steps make 24’, and shape previews of the cap and base" width="1600" height="1006" loading="lazy"></button>
-          <p class="shot-note">Shown with the demo pattern that ships with the app; its round 4 is intentionally wrong to show the checker at work.</p>
+          <button class="art" type="button" data-caption="Pattern checker: correct rounds are marked green, and a deliberately incorrect round in the demo pattern is flagged"><img src="images/pattern-generator-checker.jpg" alt="Pattern page in my pattern generator: crochet rounds with green ‘adds up’ marks, two red flags reading ‘Stated count is 26, but the steps make 24’, and shape previews of the cap and base" width="1600" height="1006" loading="lazy"></button>
+          <p class="shot-note">Shown with the app’s demo pattern, in which round 4 is intentionally incorrect.</p>
         </div>
       </article>
     </div>
@@ -465,7 +473,6 @@
     <div class="wrap">
       <p class="eyebrow">Skills</p>
       <h2 class="section-title">What I bring <em>to a team</em></h2>
-      <p class="section-intro">I’m equally comfortable in a spreadsheet and a sketchbook; the projects I’m proudest of needed both.</p>
 
       <div class="skills-grid">
         <div class="skill-col">
@@ -489,14 +496,13 @@
         </div>
 
         <div class="skill-col">
-          <h3>Soft skills, with receipts</h3>
+          <h3>Soft skills</h3>
           <dl class="soft">
-            <div><dt>Visual storytelling</dt><dd>Turned an argument about pesticides and monocropping into award-winning still lifes.</dd></div>
-            <div><dt>Thinking on my feet</dt><dd>A new company and a new problem every few weeks in IYA’s Innovators Forum.</dd></div>
-            <div><dt>Leadership</dt><dd>Three high school presidencies, including founding SPCArts.</dd></div>
-            <div><dt>Persistence</dt><dd>Got our school’s lost courtyard trees replaced through a petition, donations and pitches to the district.</dd></div>
-            <div><dt>Trust &amp; collaboration</dt><dd>Show jumping taught me to share control; you can’t steer a fifteen hundred pound animal alone.</dd></div>
-            <div><dt>Self-direction</dt><dd>Kept going after a class project ended and built my own working pattern generator.</dd></div>
+            <div><dt>Visual storytelling</dt><dd>Translated research on pesticides and monocropping into an award-winning series of still lifes.</dd></div>
+            <div><dt>Adaptability</dt><dd>Research and pitch solutions for a new company and problem every few weeks in IYA’s Innovators Forum.</dd></div>
+            <div><dt>Leadership</dt><dd>Held three high school presidencies, including founding SPCArts.</dd></div>
+            <div><dt>Collaboration</dt><dd>Competitive show jumping taught me to trust my trainer and horse rather than control every stride.</dd></div>
+            <div><dt>Initiative</dt><dd>Continued a class project independently by building my own working pattern generator.</dd></div>
           </dl>
         </div>
       </div>
@@ -517,19 +523,18 @@
       </div>
 
       <div class="ya-gallery">
-        <button class="art" type="button" data-caption="YoungArts Collection: kiwi"><img src="images/youngarts-kiwi.jpg" alt="Painting of sliced kiwi fruit on a blue plate against an orange background" width="840" height="635" loading="lazy"></button>
-        <button class="art" type="button" data-caption="YoungArts Collection: strawberry"><img src="images/youngarts-strawberry.jpg" alt="Painting of a halved strawberry in abstracted pinks and reds on green" width="820" height="670" loading="lazy"></button>
-        <button class="art" type="button" data-caption="YoungArts Collection: banana"><img src="images/youngarts-banana.jpg" alt="Painting of a peeled, sliced banana on a dark red surface" width="849" height="689" loading="lazy"></button>
-        <button class="art" type="button" data-caption="YoungArts Collection: fruit slices"><img src="images/youngarts-slices.jpg" alt="Painting of four abstracted fruit slices in orange and yellow on blue" width="899" height="623" loading="lazy"></button>
-        <button class="art" type="button" data-caption="YoungArts Collection: starfruit"><img src="images/youngarts-starfruit.jpg" alt="Painting of two yellow starfruit on a bright blue background" width="823" height="612" loading="lazy"></button>
-        <button class="art" type="button" data-caption="YoungArts Collection: watermelon"><img src="images/youngarts-watermelon.jpg" alt="Painting of watermelon wedges against swirling blue shapes" width="984" height="799" loading="lazy"></button>
+        <button class="art" type="button" data-caption="YoungArts Collection: Kiwi"><img src="images/youngarts-kiwi.jpg" alt="Painting of sliced kiwi fruit on a blue plate against an orange background" width="840" height="635" loading="lazy"></button>
+        <button class="art" type="button" data-caption="YoungArts Collection: Strawberry"><img src="images/youngarts-strawberry.jpg" alt="Painting of a halved strawberry in abstracted pinks and reds on green" width="820" height="670" loading="lazy"></button>
+        <button class="art" type="button" data-caption="YoungArts Collection: Banana"><img src="images/youngarts-banana.jpg" alt="Painting of a peeled, sliced banana on a dark red surface" width="849" height="689" loading="lazy"></button>
+        <button class="art" type="button" data-caption="YoungArts Collection: Fruit slices"><img src="images/youngarts-slices.jpg" alt="Painting of four abstracted fruit slices in orange and yellow on blue" width="899" height="623" loading="lazy"></button>
+        <button class="art" type="button" data-caption="YoungArts Collection: Starfruit"><img src="images/youngarts-starfruit.jpg" alt="Painting of two yellow starfruit on a bright blue background" width="823" height="612" loading="lazy"></button>
+        <button class="art" type="button" data-caption="YoungArts Collection: Watermelon"><img src="images/youngarts-watermelon.jpg" alt="Painting of watermelon wedges against swirling blue shapes" width="984" height="799" loading="lazy"></button>
       </div>
 
       <div class="ya-body">
         <div>
-          <p>I spent the better part of two years painting fruit, which I realize sounds mildly nonsensical for a climate project. Each piece takes on a hidden cost of how our food is grown, from synthetic pesticides to monocropping that pushes once-fertile land toward desertification; distorting a familiar form makes people look twice at what they take for granted. The award came with a week-long intensive in Miami and a scholarship. Admittedly, a painting of a banana won’t fix the food system, but it can make someone wonder where the banana came from.</p>
+          <p>My YoungArts submission was a series of still lifes that uses fruit, one of the oldest subjects in art, to question the agricultural system behind it. Each piece deals with a hidden cost of how our food is grown, from the overuse of synthetic pesticides and fertilizers to monocropping that strips soil of its health and pushes once-fertile land toward desertification. By distorting familiar forms, I wanted viewers to look twice at something they usually take for granted. The award included a week-long intensive in Miami and a scholarship.</p>
         </div>
-        <blockquote>I came to business through a paintbrush. This series taught me the core of marketing early: people act when an image makes them feel something.</blockquote>
       </div>
     </div>
   </section>
@@ -539,7 +544,7 @@
     <div class="wrap">
       <p class="eyebrow">Art portfolio</p>
       <h2 class="section-title">Fine arts <em>foundation</em></h2>
-      <p class="section-intro">After eighth grade, I traded a private-school uniform for the Visual Arts Conservatory at Booker T. Washington High School for the Performing and Visual Arts in downtown Dallas, one of the country’s leading arts high schools. Four years later, I graduated salutatorian. The Hudson Gallery in Dallas has shown a range of my work, including my AP 2-D Design portfolio. The conservatory work below is from those years.</p>
+      <p class="section-intro">I trained in the Visual Arts Conservatory at Booker T. Washington High School for the Performing and Visual Arts in Dallas, one of the nation’s leading arts high schools, and graduated salutatorian. The Hudson Gallery in Dallas has exhibited a range of my work, including my AP 2-D Design portfolio. The conservatory work below is from those four years.</p>
 
       <div class="gallery-block">
         <h3>Conservatory work</h3>
@@ -562,7 +567,7 @@
 
       <div class="gallery-block">
         <h3>Equestrian work</h3>
-        <p>I’m a lifelong rider, so horses show up in my work whether I plan them or not.</p>
+        <p>As a lifelong equestrian, I often bring horses into my creative work.</p>
         <div class="grid2">
           <figure><button class="art" type="button" data-caption="Gray horse in stall"><img src="images/equestrian-stall.jpg" alt="Painting of a gray horse seen from behind, looking out of a green stable stall" width="823" height="902" loading="lazy"></button><figcaption>Gray horse in stall</figcaption></figure>
           <figure><button class="art" type="button" data-caption="Show jumpers"><img src="images/equestrian-horses.jpg" alt="Painting of show-jumping horses and riders" width="686" height="852" loading="lazy"></button><figcaption>Show jumpers</figcaption></figure>
@@ -581,8 +586,8 @@
       </figure>
       <div>
         <p class="eyebrow">About me</p>
-        <p class="big">I’m a classically trained painter and a detail-obsessed perfectionist, a combination that turns out to be surprisingly useful in business school.</p>
-        <p>As an artist, I learn a place through how it looks: its signage, its packaging, its storefronts. That habit is what pulled me toward marketing. I’m also a show jumper, and riding taught me the lesson I bring to every group project. For years I tried to control every stride; only after a bad fall did I learn to trust my trainer and my horse, and we went from a solid pair to a winning one.</p>
+        <p class="big">As a visual artist, I learn a place through how it looks: its signage, packaging and storefronts. That habit is what drew me to marketing and brand strategy.</p>
+        <p>I’m also a competitive show jumper. For years I tried to control everything in the ring; after a bad fall, I learned to trust my trainer and my horse, and we went from a solid pair to a winning one. That experience shapes how I work on teams.</p>
 
 
         <div class="program">
@@ -621,7 +626,7 @@
       <h2>Let’s create together.</h2>
       <div class="contact-grid">
         <div>
-          <p class="lead">I’m based in Los Angeles and looking for a summer 2027 marketing or brand internship, ideally at a start-up or an in-house team. If you have a project where the research and the design need to talk to each other, I’d love to hear about it.</p>
+          <p class="lead">Reach out for a collaboration.</p>
           <ul class="contact-links">
             <li><a href="mailto:ediemurawski@gmail.com">ediemurawski@gmail.com</a></li>
             <li><a href="https://www.linkedin.com/in/edie-murawski-46a018272" target="_blank" rel="noopener">LinkedIn</a></li>
